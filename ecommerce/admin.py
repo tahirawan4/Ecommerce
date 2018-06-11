@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from models import Slider, Image ,Category,Product, ContactUs, Order
+from models import Slider, Image ,Category,Product, ContactUs, Order, SocailMedia
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -29,6 +29,11 @@ class OrderAdmin(admin.ModelAdmin):
     model = Order
     list_display = ('name', 'email' ,'phone', 'message')
 
+class SocailMediaAdmin(admin.ModelAdmin):
+    model = SocailMedia
+    list_display = ('title', 'descrition')
+
+admin.site.register(SocailMedia, SocailMediaAdmin)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Slider, SliderAdmin)

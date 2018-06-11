@@ -38,10 +38,11 @@ class Slider(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=250)
     descrition = models.CharField(max_length=250, blank=True, default='')
-    product_img = models.ManyToManyField(Image)
+    product_images = models.ManyToManyField(Image)
     price = models.IntegerField()
     slug = models.SlugField(max_length=250)
     category = models.ManyToManyField(Category)
+    images = models.ImageField(upload_to=upload_images, null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -66,3 +67,13 @@ class Order(models.Model):
 
     def __str__(self):
         return self.name
+
+class SocailMedia(models.Model):
+    title = models.CharField(max_length=250)
+    descrition = models.CharField(max_length=250, blank=True, default='')
+    images = models.ImageField(upload_to=upload_images, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+
