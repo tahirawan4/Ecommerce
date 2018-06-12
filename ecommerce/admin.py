@@ -7,11 +7,13 @@ from models import Slider, Image ,Category,Product, ContactUs, Order, SocailMedi
 
 class ProductAdmin(admin.ModelAdmin):
     model = Product
-    list_display = ('title', 'descrition', 'price', 'slug')
+    list_display = ('title', 'descrition', 'price')
+    prepopulated_fields = {'slug': ('title',)}
 
 class CategoryAdmin(admin.ModelAdmin):
     model = Category
     list_display = ('title', 'descrition')
+    prepopulated_fields = {'slug': ('title',)}
 
 class SliderAdmin(admin.ModelAdmin):
     model = Slider
@@ -19,7 +21,8 @@ class SliderAdmin(admin.ModelAdmin):
 
 class ImageAdmin(admin.ModelAdmin):
     model = Image
-    list_display = ('title','alt','slug')
+    list_display = ('title','alt')
+    prepopulated_fields = {'slug': ('title',)}
 
 class ContactUsAdmin(admin.ModelAdmin):
     model = ContactUs
@@ -32,6 +35,7 @@ class OrderAdmin(admin.ModelAdmin):
 class SocailMediaAdmin(admin.ModelAdmin):
     model = SocailMedia
     list_display = ('title', 'descrition')
+
 
 admin.site.register(SocailMedia, SocailMediaAdmin)
 admin.site.register(Product, ProductAdmin)
