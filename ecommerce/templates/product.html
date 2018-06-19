@@ -5,6 +5,10 @@
 	<title>Product</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
 <!--===============================================================================================-->
@@ -571,9 +575,10 @@
 								</div>
 
 								<div class="block2-txt p-t-20">
-									<a href="http://127.0.0.1:8000/product_detail/" class="block2-name dis-block s-text3 p-b-5">
+									<a href="#myModal" class="block2-name dis-block s-text3 p-b-5">
 										Herschel supply co 25l
 									</a>
+                                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">INTERESTED</button>
 
 									<span class="block2-price m-text6 p-r-5">
 										$75.00
@@ -604,7 +609,7 @@
 								</div>
 
 								<div class="block2-txt p-t-20">
-									<a href="http://127.0.0.1:8000/product_detail/" class="block2-name dis-block s-text3 p-b-5">
+									<a href="#myModal" class="block2-name dis-block s-text3 p-b-5">
 										Denim jacket blue
 									</a>
 
@@ -637,7 +642,7 @@
 								</div>
 
 								<div class="block2-txt p-t-20">
-									<a href="http://127.0.0.1:8000/product_detail/" class="block2-name dis-block s-text3 p-b-5">
+									<a href="#myModal" class="block2-name dis-block s-text3 p-b-5">
 										Coach slim easton black
 									</a>
 
@@ -670,7 +675,7 @@
 								</div>
 
 								<div class="block2-txt p-t-20">
-									<a href="http://127.0.0.1:8000/product_detail/" class="block2-name dis-block s-text3 p-b-5">
+									<a href="#myModal" class="block2-name dis-block s-text3 p-b-5">
 										Frayed denim shorts
 									</a>
 
@@ -1145,6 +1150,27 @@
 	<!-- Container Selection -->
 	<div id="dropDownSelect1"></div>
 	<div id="dropDownSelect2"></div>
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">POPUP MENU</h4>
+        </div>
+        <div class="modal-body">
+          <p>here comes the form fields</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
 

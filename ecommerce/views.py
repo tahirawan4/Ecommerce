@@ -27,3 +27,6 @@ class ProductDetailView(generic.TemplateView):
 
 class ContactView(generic.TemplateView):
     template_name = 'contact.html'
+
+class ModelView(generic.TemplateView):
+    template_name = 'model.html'
