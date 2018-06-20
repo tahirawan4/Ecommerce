@@ -7,7 +7,7 @@ from eCommerce import settings
 
 from django.shortcuts import render
 
-from ecommerce.models import Slider
+from ecommerce.models import Slider,Product, SocailMedia
 
 
 class IndexView(generic.TemplateView):
@@ -15,8 +15,9 @@ class IndexView(generic.TemplateView):
 
     def get(self, request, *args, **kwargs):
         slider_images = Slider.objects.all()
-
-        return render(request, self.template_name, {'slider_images': slider_images})
+        products = Product.objects.all()
+        social_media = SocailMedia.objects.all()
+        return render(request, self.template_name, {'slider_images': slider_images, 'products':products, 'social_media':social_media})
 
 class ProductsView(generic.TemplateView):
     template_name = 'product.html'
@@ -26,3 +27,6 @@ class ProductDetailView(generic.TemplateView):
 
 class ContactView(generic.TemplateView):
     template_name = 'contact.html'
+
+class ModelView(generic.TemplateView):
+    template_name = 'model.html'
