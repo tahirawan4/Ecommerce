@@ -35,6 +35,23 @@
     <link rel="stylesheet" type="text/css" href="static/css/util.css">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
     <!--===============================================================================================-->
+     <style>
+/* Style the buttons */
+    .btn {
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+{#        background-color: #f1f1f1;#}
+        cursor: pointer;
+        font-size: 18px;
+        }
+
+/* Style the active class, and buttons on mouse-over */
+    .active, .btn:hover {
+        background-color: #e65540;
+        color: white;
+    }
+    </style>
 </head>
 <body class="animsition">
 
@@ -44,89 +61,62 @@
     <div class="container-menu-header">
         <div class="topbar">
             <div class="topbar-social">
-                <a href="#" class="topbar-social-item fa fa-facebook"></a>
-                <a href="#" class="topbar-social-item fa fa-instagram"></a>
-                <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-                <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-                <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+                Socail Icons
             </div>
 
             <span class="topbar-child1">
-					Free shipping for standard order over $100
+					Cricket Equipment, Cricket Bats, Cricket Shoes, Helmets etc
 				</span>
 
             <div class="topbar-child2">
 					<span class="topbar-email">
-						fashe@example.com
+						abc@example.com
 					</span>
 
-                <div class="topbar-language rs1-select2">
-                    <select class="selection-1" name="time">
-                        <option>USD</option>
-                        <option>EUR</option>
-                    </select>
-                </div>
             </div>
         </div>
 
         <div class="wrap_header">
             <!-- Logo -->
-            <a href="index.html" class="logo">
+            <a href="{% url 'index' %}" class="logo">
                 <img src="images/icons/logo.png" alt="IMG-LOGO">
             </a>
 
             <!-- Menu -->
             <div class="wrap_menu">
                 <nav class="menu">
-                    <ul class="main_menu">
+                     <div id="myDIV">
+                      <ul class="main_menu">
                         <li>
-                            <a href="#">Home</a>
-                            <ul class="sub_menu">
-                                <li><a href="#">Homepage V1</a></li>
-                                <li><a href="#">Homepage V2</a></li>
-                                <li><a href="#">Homepage V3</a></li>
-                            </ul>
+                            <a class="btn active" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="{% url 'product' %}">Shop</a>
+                        </li>
+                                                  <li class="">
+                            <a class="btn" href="{% url 'index' %}">Sale</a>
                         </li>
 
                         <li>
-                            <a href="/products/">Shop</a>
-                        </li>
-
-                        <li class="sale-noti">
-                            <a href="/products/">Sale</a>
+                            <a class="btn" href="#">About</a>
                         </li>
 
                         <li>
-                            <a href="#">Features</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Blog</a>
-                        </li>
-
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-
-                        <li>
-                            <a href="/contact/">Contact</a>
+                            <a class="btn" href="{% url 'contact' %}">Contact</a>
                         </li>
                     </ul>
+                  </div>
                 </nav>
             </div>
 
             <!-- Header Icon -->
             <div class="header-icons">
-                <a href="#" class="header-wrapicon1 dis-block">
-                    <img src="static/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                </a>
+
 
                 <span class="linedivide1"></span>
 
                 <div class="header-wrapicon2">
-                    <img src="static/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown"
-                         alt="ICON">
-                    <span class="header-icons-noti">0</span>
+
 
                     <!-- Header cart noti -->
                     <div class="header-cart header-dropdown">
@@ -214,94 +204,6 @@
 
         <!-- Button show menu -->
         <div class="btn-show-menu">
-            <!-- Header Icon mobile -->
-            <div class="header-icons-mobile">
-                <a href="#" class="header-wrapicon1 dis-block">
-                    <img src="static/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
-                </a>
-
-                <span class="linedivide2"></span>
-
-                <div class="header-wrapicon2">
-                    <img src="static/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown"
-                         alt="ICON">
-                    <span class="header-icons-noti">0</span>
-
-                    <!-- Header cart noti -->
-                    <div class="header-cart header-dropdown">
-                        <ul class="header-cart-wrapitem">
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="static/images/item-cart-01.jpg" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        White Shirt With Pleat Detail Back
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-                                </div>
-                            </li>
-
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="static/images/item-cart-02.jpg" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        Converse All Star Hi Black Canvas
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-                                </div>
-                            </li>
-
-                            <li class="header-cart-item">
-                                <div class="header-cart-item-img">
-                                    <img src="static/images/item-cart-03.jpg" alt="IMG">
-                                </div>
-
-                                <div class="header-cart-item-txt">
-                                    <a href="#" class="header-cart-item-name">
-                                        Nixon Porter Leather Watch In Tan
-                                    </a>
-
-                                    <span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <div class="header-cart-total">
-                            Total: $75.00
-                        </div>
-
-                        <div class="header-cart-buttons">
-                            <div class="header-cart-wrapbtn">
-                                <!-- Button -->
-                                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                    View Cart
-                                </a>
-                            </div>
-
-                            <div class="header-cart-wrapbtn">
-                                <!-- Button -->
-                                <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                    Check Out
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
@@ -326,57 +228,30 @@
 								fashe@example.com
 							</span>
 
-                        <div class="topbar-language rs1-select2">
-                            <select class="selection-1" name="time">
-                                <option>USD</option>
-                                <option>EUR</option>
-                            </select>
-                        </div>
                     </div>
                 </li>
 
                 <li class="item-topbar-mobile p-l-10">
                     <div class="topbar-social-mobile">
-                        <a href="#" class="topbar-social-item fa fa-facebook"></a>
-                        <a href="#" class="topbar-social-item fa fa-instagram"></a>
-                        <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-                        <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-                        <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+
                     </div>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="index.html">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="index.html">Homepage V1</a></li>
-                        <li><a href="home-02.html">Homepage V2</a></li>
-                        <li><a href="home-03.html">Homepage V3</a></li>
-                    </ul>
+                    <a href="{% url 'index' %}">Home</a>
                     <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Shop</a>
+                    <a href="{% url 'product' %}">Shop</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="product.html">Sale</a>
+                    <a href="{% url 'index' %}">Sale</a>
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="cart.html">Features</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="blog.html">Blog</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="about.html">About</a>
-                </li>
-
-                <li class="item-menu-mobile">
-                    <a href="contact.html">Contact</a>
+                    <a href="{% url 'contact' %}">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -403,7 +278,7 @@
 
                             <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
                                 <!-- Button -->
-                                <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+                                <a href="/products/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
                                     Shop Now
                                 </a>
                             </div>
@@ -425,7 +300,7 @@
 
                             <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
                                 <!-- Button -->
-                                <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+                                <a href="http://127.0.0.1:8000/products/" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
                                     Shop Now
                                 </a>
                             </div>
@@ -433,8 +308,6 @@
                     </div>
                 {% endif %}
             {% endfor %}
-
-
         </div>
     </div>
 </section>
@@ -443,93 +316,25 @@
 <section class="banner bgwhite p-t-40 p-b-40">
     <div class="container">
         <div class="row">
-            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+            {% for cat in category %}
+            <div class="col-sm-8 col-md-6 col-lg-4 m-l-r-auto">
                 <!-- block1 -->
                 <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <a href="/products/"><img src="static/images/index5.jpg" alt="IMG-BENNER"></a>
+                    <a href="{% url 'category_product' cat.slug %}"><img src="{{ cat.image.url }}" alt="IMG-BENNER"></a>
 
                     <div class="block1-wrapbtn w-size2">
                         <!-- Button -->
-                        <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                            Dresses
+                        <a href="{% url 'category_product' cat.slug %}" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                            {{ cat.title }}
                         </a>
                     </div>
                 </div>
 
-                <!-- block1 -->
-                <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <img src="static/images/index3.jpeg" alt="IMG-BENNER">
 
-                    <div class="block1-wrapbtn w-size2">
-                        <!-- Button -->
-                        <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                            Sunglasses
-                        </a>
-                    </div>
-                </div>
             </div>
+            {% endfor %}
 
-            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-                <!-- block1 -->
-                <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <img src="static/images/inex2.jpg" alt="IMG-BENNER">
 
-                    <div class="block1-wrapbtn w-size2">
-                        <!-- Button -->
-                        <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                            Watches
-                        </a>
-                    </div>
-                </div>
-
-                <!-- block1 -->
-                <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <img src="static/images/index4.jpg" alt="IMG-BENNER">
-
-                    <div class="block1-wrapbtn w-size2">
-                        <!-- Button -->
-                        <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                            Footerwear
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-                <!-- block1 -->
-                <div class="block1 hov-img-zoom pos-relative m-b-30">
-                    <img src="images/banner-04.jpg" alt="IMG-BENNER">
-
-                    <div class="block1-wrapbtn w-size2">
-                        <!-- Button -->
-                        <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                            Bags
-                        </a>
-                    </div>
-                </div>
-
-                <!-- block2 -->
-                <div class="block2 wrap-pic-w pos-relative m-b-30">
-                    <img src="static/images/icons/bg-01.jpg" alt="IMG">
-
-                    <div class="block2-content sizefull ab-t-l flex-col-c-m">
-                        <h4 class="m-text4 t-center w-size3 p-b-8">
-                            Sign up & get 20% off
-                        </h4>
-
-                        <p class="t-center w-size4">
-                            Be the frist to know about the latest fashion news and get exclu-sive offers
-                        </p>
-
-                        <div class="w-size2 p-t-25">
-                            <!-- Button -->
-                            <a href="#" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-                                Sign Up
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -539,7 +344,7 @@
     <div class="container">
         <div class="sec-title p-b-60">
             <h3 class="m-text5 t-center">
-                Most Selling Product
+                New Arrivals
             </h3>
         </div>
 
@@ -560,20 +365,18 @@
                                     </a>
                                     <div class="block2-btn-addcart w-size1 trans-0-4">
                                         <!-- Button -->
-                                        <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                            Add to Cart
-                                        </button>
                                     </div>
                                 </div>
                             </div>
                             <div class="block2-txt p-t-20">
-                                <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                <a href="{% url 'product_detail' p.slug %}" class="block2-name dis-block s-text3 p-b-5">
                                     {{ p.title }}
                                 </a>
 
                                 <span class="block2-price m-text6 p-r-5">
 									$ {{ p.price }}
 								</span>
+
                             </div>
                         </div>
                     </div>
@@ -602,7 +405,7 @@
                             Lookbook
                         </h3>
 
-                        <a href="#" class="s-text4 hov2 p-t-20 ">
+                        <a href="/products/" class="s-text4 hov2 p-t-20 ">
                             View Collection
                         </a>
                     </div>
@@ -612,64 +415,6 @@
             <div class="col-sm-10 col-md-8 col-lg-6 m-l-r-auto p-t-15 p-b-15">
                 <div class="bgwhite hov-img-zoom pos-relative p-b-20per-ssm">
                     <img src="static/images/black3.jpg" alt="IMG-BANNER">
-
-                    <div class="ab-t-l sizefull flex-col-c-b p-l-15 p-r-15 p-b-20">
-                        <div class="t-center">
-                            <a href="product-detail.html" class="dis-block s-text3 p-b-5">
-                                Gafas sol Hawkers one
-                            </a>
-
-                            <span class="block2-oldprice m-text7 p-r-5">
-									$29.50
-								</span>
-
-                            <span class="block2-newprice m-text8">
-									$15.90
-								</span>
-                        </div>
-
-                        <div class="flex-c-m p-t-44 p-t-30-xl">
-                            <div class="flex-col-c-m size3 bo1 m-l-5 m-r-5">
-									<span class="m-text10 p-b-1 days">
-										69
-									</span>
-
-                                <span class="s-text5">
-										days
-									</span>
-                            </div>
-
-                            <div class="flex-col-c-m size3 bo1 m-l-5 m-r-5">
-									<span class="m-text10 p-b-1 hours">
-										04
-									</span>
-
-                                <span class="s-text5">
-										hrs
-									</span>
-                            </div>
-
-                            <div class="flex-col-c-m size3 bo1 m-l-5 m-r-5">
-									<span class="m-text10 p-b-1 minutes">
-										32
-									</span>
-
-                                <span class="s-text5">
-										mins
-									</span>
-                            </div>
-
-                            <div class="flex-col-c-m size3 bo1 m-l-5 m-r-5">
-									<span class="m-text10 p-b-1 seconds">
-										05
-									</span>
-
-                                <span class="s-text5">
-										secs
-									</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -677,90 +422,6 @@
 </section>
 
 
-<!-- Blog -->
-{#	<section class="blog bgwhite p-t-94 p-b-65">#}
-{#		<div class="container">#}
-{#			<div class="sec-title p-b-52">#}
-{#				<h3 class="m-text5 t-center">#}
-{#					Our Blog#}
-{#				</h3>#}
-{#			</div>#}
-{##}
-{#			<div class="row">#}
-{#				<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">#}
-{#					<!-- Block3 -->#}
-{#					<div class="block3">#}
-{#						<a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">#}
-{#							<img src="static/images/blog1.jpg" alt="IMG-BLOG">#}
-{#						</a>#}
-{##}
-{#						<div class="block3-txt p-t-14">#}
-{#							<h4 class="p-b-7">#}
-{#								<a href="blog-detail.html" class="m-text11">#}
-{#									Black Friday Guide: Best Sales & Discount Codes#}
-{#								</a>#}
-{#							</h4>#}
-{##}
-{#							<span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>#}
-{#							<span class="s-text6">on</span> <span class="s-text7">July 22, 2017</span>#}
-{##}
-{#							<p class="s-text8 p-t-16">#}
-{#								Duis ut velit gravida nibh bibendum commodo. Sus-pendisse pellentesque mattis augue id euismod. Inter-dum et malesuada fames#}
-{#							</p>#}
-{#						</div>#}
-{#					</div>#}
-{#				</div>#}
-{##}
-{#				<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">#}
-{#					<!-- Block3 -->#}
-{#					<div class="block3">#}
-{#						<a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">#}
-{#							<img src="static/images/blog1.jpg" alt="IMG-BLOG">#}
-{#						</a>#}
-{##}
-{#						<div class="block3-txt p-t-14">#}
-{#							<h4 class="p-b-7">#}
-{#								<a href="blog-detail.html" class="m-text11">#}
-{#									The White Sneakers Nearly Every Fashion Girls Own#}
-{#								</a>#}
-{#							</h4>#}
-{##}
-{#							<span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>#}
-{#							<span class="s-text6">on</span> <span class="s-text7">July 18, 2017</span>#}
-{##}
-{#							<p class="s-text8 p-t-16">#}
-{#								Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame#}
-{#							</p>#}
-{#						</div>#}
-{#					</div>#}
-{#				</div>#}
-{##}
-{#				<div class="col-sm-10 col-md-4 p-b-30 m-l-r-auto">#}
-{#					<!-- Block3 -->#}
-{#					<div class="block3">#}
-{#						<a href="blog-detail.html" class="block3-img dis-block hov-img-zoom">#}
-{#							<img src="static/images/blog2.jpg" alt="IMG-BLOG">#}
-{#						</a>#}
-{##}
-{#						<div class="block3-txt p-t-14">#}
-{#							<h4 class="p-b-7">#}
-{#								<a href="blog-detail.html" class="m-text11">#}
-{#									New York SS 2018 Street Style: Annina Mislin#}
-{#								</a>#}
-{#							</h4>#}
-{##}
-{#							<span class="s-text6">By</span> <span class="s-text7">Nancy Ward</span>#}
-{#							<span class="s-text6">on</span> <span class="s-text7">July 2, 2017</span>#}
-{##}
-{#							<p class="s-text8 p-t-16">#}
-{#								Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed hendrerit ligula porttitor. Fusce sit amet maximus nunc#}
-{#							</p>#}
-{#						</div>#}
-{#					</div>#}
-{#				</div>#}
-{#			</div>#}
-{#		</div>#}
-{#	</section>#}
 
 <!-- Instagram -->
 <section class="instagram p-t-20">
@@ -850,12 +511,13 @@
                 </p>
 
                 <div class="flex-m p-t-30">
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
-                    <a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
+                    {% for social_link in social_links %}
+                    <li><a href={{ social_link.url }}><i class="fa {{ social_link.font_awesome_icon_tag }}"
+                                                                     aria-hidden="true"></i></a></li>
+                    {% endfor %}
+
                 </div>
+
             </div>
         </div>
 
@@ -863,97 +525,19 @@
             <h4 class="s-text12 p-b-30">
                 Categories
             </h4>
-
+            {% for c in category %}
             <ul>
                 <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Men
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Women
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Dresses
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Sunglasses
+                    <a href="{% url 'category_product' c.slug %}" class="s-text7">
+                        {{ c.title }}
                     </a>
                 </li>
             </ul>
+            {% endfor %}
         </div>
 
-        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-            <h4 class="s-text12 p-b-30">
-                Links
-            </h4>
 
-            <ul>
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Search
-                    </a>
-                </li>
 
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        About Us
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="http://127.0.0.1:8000/contact/" class="s-text7">
-                        Contact Us
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Returns
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-            <h4 class="s-text12 p-b-30">
-                Help
-            </h4>
-
-            <ul>
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Track Order
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Returns
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        Shipping
-                    </a>
-                </li>
-
-                <li class="p-b-9">
-                    <a href="#" class="s-text7">
-                        FAQs
-                    </a>
-                </li>
-            </ul>
-        </div>
 
         <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
             <h4 class="s-text12 p-b-30">
@@ -1018,6 +602,8 @@
 <div id="dropDownSelect1"></div>
 
 
+
+
 <!--===============================================================================================-->
 <script type="text/javascript" src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
@@ -1060,6 +646,19 @@
 
 <!--===============================================================================================-->
 <script src="static/js/main.js"></script>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 
 </body>
 </html>

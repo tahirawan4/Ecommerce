@@ -13,7 +13,7 @@ def get_unique_slug(model_instance, title, slug):
     ModelClass = model_instance.__class__
 
     while ModelClass._default_manager.filter(
-        **{title: unique_slug}
+            **{title: unique_slug}
     ).exists():
         unique_slug = '{}-{}'.format(slug, extension)
         extension += 1

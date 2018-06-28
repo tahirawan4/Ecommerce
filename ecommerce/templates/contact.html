@@ -30,7 +30,25 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<!--===============================================================================================--></head>
+<!--===============================================================================================-->
+     <style>
+/* Style the buttons */
+    .btn {
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+{#        background-color: #f1f1f1;#}
+        cursor: pointer;
+        font-size: 18px;
+        }
+
+/* Style the active class, and buttons on mouse-over */
+    .active, .btn:hover {
+        background-color: #e65540;
+        color: white;
+    }
+    </style>
+</head>
 <body class="animsition">
 
 	<!-- Header -->
@@ -39,88 +57,76 @@
 		<div class="container-menu-header">
 			<div class="topbar">
 				<div class="topbar-social">
-					<a href="#" class="topbar-social-item fa fa-facebook"></a>
-					<a href="#" class="topbar-social-item fa fa-instagram"></a>
-					<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-					<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-					<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+                    Socail Icons
+{#					<a href="#" class="topbar-social-item fa fa-facebook"></a>#}
+{#					<a href="#" class="topbar-social-item fa fa-instagram"></a>#}
+{#					<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>#}
+{#					<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>#}
+{#					<a href="#" class="topbar-social-item fa fa-youtube-play"></a>#}
 				</div>
 
 				<span class="topbar-child1">
-					Free shipping for standard order over $100
+					Cricket Equipment, Cricket Bats, Cricket Shoes, Helmets etc
 				</span>
 
 				<div class="topbar-child2">
 					<span class="topbar-email">
-						fashe@example.com
+						abc@example.com
 					</span>
 
 					<div class="topbar-language rs1-select2">
-						<select class="selection-1" name="time">
-							<option>USD</option>
-							<option>EUR</option>
-						</select>
+{#						<select class="selection-1" name="time">#}
+{#							<option>USD</option>#}
+{#							<option>EUR</option>#}
+{#						</select>#}
 					</div>
 				</div>
 			</div>
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="index.html" class="logo">
+				<a href="{% url 'index' %}" class="logo">
 					<img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO">
 				</a>
 
 				<!-- Menu -->
 				<div class="wrap_menu">
 					<nav class="menu">
-						<ul class="main_menu">
-							<li>
-								<a href="#">Home</a>
-								<ul class="sub_menu">
-									<li><a href="#">Homepage V1</a></li>
-									<li><a href="#">Homepage V2</a></li>
-									<li><a href="#">Homepage V3</a></li>
-								</ul>
-							</li>
+						 <div id="myDIV">
+                      <ul class="main_menu">
+                        <li>
+                            <a class="btn" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li>
+                            <a class="btn " href="{% url 'product' %}">Shop</a>
+                        </li>
 
-							<li>
-								<a href="/product/">Shop</a>
-							</li>
+                        <li class="">
+                            <a class="btn" href="{% url 'index' %}">Sale</a>
+                        </li>
+                        <li>
+                            <a class="btn" href="#">About</a>
+                        </li>
 
-							<li class="sale-noti">
-								<a href="/product/">Sale</a>
-							</li>
-
-							<li>
-								<a href="#">Features</a>
-							</li>
-
-							<li>
-								<a href="#">Blog</a>
-							</li>
-
-							<li>
-								<a href="#">About</a>
-							</li>
-
-							<li>
-								<a href="/contact/">Contact</a>
-							</li>
-						</ul>
+                        <li>
+                            <a class="btn active" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                    </ul>
+                  </div>
 					</nav>
 				</div>
 
 				<!-- Header Icon -->
 				<div class="header-icons">
-					<a href="#" class="header-wrapicon1 dis-block">
-						<img src="{% static 'images/icons/icon-header-01.png' %}" class="header-icon1" alt="ICON">
-					</a>
+{#					<a href="#" class="header-wrapicon1 dis-block">#}
+{#						<img src="{% static 'images/icons/icon-header-01.png' %}" class="header-icon1" alt="ICON">#}
+{#					</a>#}
 
 					<span class="linedivide1"></span>
 
 					<div class="header-wrapicon2">
-						<img src="{% static 'images/icons/icon-header-02.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
+{#						<img src="{% static 'images/icons/icon-header-02.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON">#}
+{#						<span class="header-icons-noti">0</span>#}
 
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
@@ -209,91 +215,91 @@
 			<!-- Button show menu -->
 			<div class="btn-show-menu">
 				<!-- Header Icon mobile -->
-				<div class="header-icons-mobile">
-					<a href="#" class="header-wrapicon1 dis-block">
-						<img src="{% static 'images/icons/icon-header-01.png' %}" class="header-icon1" alt="ICON">
-					</a>
-
-					<span class="linedivide2"></span>
-
-					<div class="header-wrapicon2">
-						<img src="{% static 'images/icons/icon-header-02.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-						<span class="header-icons-noti">0</span>
-
-						<!-- Header cart noti -->
-						<div class="header-cart header-dropdown">
-							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="{% static 'images/item-cart-01.jpg' %}" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											White Shirt With Pleat Detail Back
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $19.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="{% static 'images/item-cart-02.jpg' %}" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Converse All Star Hi Black Canvas
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-									</div>
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="{% static 'images/item-cart-03.jpg' %}" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-
-							<div class="header-cart-total">
-								Total: $75.00
-							</div>
-
-							<div class="header-cart-buttons">
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										View Cart
-									</a>
-								</div>
-
-								<div class="header-cart-wrapbtn">
-									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-										Check Out
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+{#				<div class="header-icons-mobile">#}
+{#					<a href="#" class="header-wrapicon1 dis-block">#}
+{#						<img src="{% static 'images/icons/icon-header-01.png' %}" class="header-icon1" alt="ICON">#}
+{#					</a>#}
+{##}
+{#					<span class="linedivide2"></span>#}
+{##}
+{#					<div class="header-wrapicon2">#}
+{#						<img src="{% static 'images/icons/icon-header-02.png' %}" class="header-icon1 js-show-header-dropdown" alt="ICON">#}
+{#						<span class="header-icons-noti">0</span>#}
+{##}
+{#						<!-- Header cart noti -->#}
+{#						<div class="header-cart header-dropdown">#}
+{#							<ul class="header-cart-wrapitem">#}
+{#								<li class="header-cart-item">#}
+{#									<div class="header-cart-item-img">#}
+{#										<img src="{% static 'images/item-cart-01.jpg' %}" alt="IMG">#}
+{#									</div>#}
+{##}
+{#									<div class="header-cart-item-txt">#}
+{#										<a href="#" class="header-cart-item-name">#}
+{#											White Shirt With Pleat Detail Back#}
+{#										</a>#}
+{##}
+{#										<span class="header-cart-item-info">#}
+{#											1 x $19.00#}
+{#										</span>#}
+{#									</div>#}
+{#								</li>#}
+{##}
+{#								<li class="header-cart-item">#}
+{#									<div class="header-cart-item-img">#}
+{#										<img src="{% static 'images/item-cart-02.jpg' %}" alt="IMG">#}
+{#									</div>#}
+{##}
+{#									<div class="header-cart-item-txt">#}
+{#										<a href="#" class="header-cart-item-name">#}
+{#											Converse All Star Hi Black Canvas#}
+{#										</a>#}
+{##}
+{#										<span class="header-cart-item-info">#}
+{#											1 x $39.00#}
+{#										</span>#}
+{#									</div>#}
+{#								</li>#}
+{##}
+{#								<li class="header-cart-item">#}
+{#									<div class="header-cart-item-img">#}
+{#										<img src="{% static 'images/item-cart-03.jpg' %}" alt="IMG">#}
+{#									</div>#}
+{##}
+{#									<div class="header-cart-item-txt">#}
+{#										<a href="#" class="header-cart-item-name">#}
+{#											Nixon Porter Leather Watch In Tan#}
+{#										</a>#}
+{##}
+{#										<span class="header-cart-item-info">#}
+{#											1 x $17.00#}
+{#										</span>#}
+{#									</div>#}
+{#								</li>#}
+{#							</ul>#}
+{##}
+{#							<div class="header-cart-total">#}
+{#								Total: $75.00#}
+{#							</div>#}
+{##}
+{#							<div class="header-cart-buttons">#}
+{#								<div class="header-cart-wrapbtn">#}
+{#									<!-- Button -->#}
+{#									<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">#}
+{#										View Cart#}
+{#									</a>#}
+{#								</div>#}
+{##}
+{#								<div class="header-cart-wrapbtn">#}
+{#									<!-- Button -->#}
+{#									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">#}
+{#										Check Out#}
+{#									</a>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
 
 				<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
 					<span class="hamburger-box">
@@ -319,69 +325,57 @@
 								fashe@example.com
 							</span>
 
-							<div class="topbar-language rs1-select2">
-								<select class="selection-1" name="time">
-									<option>USD</option>
-									<option>EUR</option>
-								</select>
-							</div>
+{#							<div class="topbar-language rs1-select2">#}
+{#								<select class="selection-1" name="time">#}
+{#									<option>USD</option>#}
+{#									<option>EUR</option>#}
+{#								</select>#}
+{#							</div>#}
 						</div>
 					</li>
 
 					<li class="item-topbar-mobile p-l-10">
-						<div class="topbar-social-mobile">
-							<a href="#" class="topbar-social-item fa fa-facebook"></a>
-							<a href="#" class="topbar-social-item fa fa-instagram"></a>
-							<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
-							<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
-							<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
-						</div>
+{#						<div class="topbar-social-mobile">#}
+{#							<a href="#" class="topbar-social-item fa fa-facebook"></a>#}
+{#							<a href="#" class="topbar-social-item fa fa-instagram"></a>#}
+{#							<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>#}
+{#							<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>#}
+{#							<a href="#" class="topbar-social-item fa fa-youtube-play"></a>#}
+{#						</div>#}
 					</li>
 
-					<li class="item-menu-mobile">
-						<a href="index.html">Home</a>
-						<ul class="sub-menu">
-							<li><a href="index.html">Homepage V1</a></li>
-							<li><a href="home-02.html">Homepage V2</a></li>
-							<li><a href="home-03.html">Homepage V3</a></li>
-						</ul>
-						<i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
-					</li>
+				<li class="item-menu-mobile">
+                    <a href="{% url 'index' %}">Home</a>
+                    <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+                </li>
 
-					<li class="item-menu-mobile">
-						<a href="product.html">Shop</a>
-					</li>
+                <li class="item-menu-mobile">
+                    <a href="{% url 'product' %}">Shop</a>
+                </li>
 
-					<li class="item-menu-mobile">
-						<a href="product.html">Sale</a>
-					</li>
+                <li class="item-menu-mobile">
+                    <a href="{% url 'index' %}">Sale</a>
+                </li>
 
-					<li class="item-menu-mobile">
-						<a href="cart.html">Features</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="blog.html">Blog</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="about.html">About</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="contact.html">Contact</a>
-					</li>
+                <li class="item-menu-mobile">
+                    <a href="{% url 'contact' %}">Contact</a>
+                </li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 
 	<!-- Title Page -->
-	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({% static 'images/contact.jpg' %});">
-		<h2 class="l-text2 t-center">
-			Contact
-		</h2>
-	</section>
+{% for tbar in title_bar %}
+<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url({{ tbar.contact_title_bar.url }});">
+    <h2 class="l-text2 t-center">
+        {{ tbar.contact_title_bar_title }}
+    </h2>
+    <p class="m-text13 t-center">
+        New Arrivals Collection 2018
+    </p>
+</section>
+{% endfor %}
 
 	<!-- content page -->
 	<section class="bgwhite p-t-66 p-b-60">
@@ -393,9 +387,13 @@
 					</div>
 				</div>
 
-				<div class="col-md-6 p-b-30">
-					<form class="leave-comment">
-						<h4 class="m-text26 p-b-36 p-t-15">
+
+
+                <div class="col-md-6 p-b-30">
+					<form id="contact-form" name="contact-form-2" action="" method="post">
+                        {% csrf_token %}
+
+                        <h4 class="m-text26 p-b-36 p-t-15">
 							Send us your message
 						</h4>
 
@@ -404,7 +402,7 @@
 						</div>
 
 						<div class="bo4 of-hidden size15 m-b-20">
-							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone-number" placeholder="Phone Number">
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phonenumber" placeholder="Phone Number">
 						</div>
 
 						<div class="bo4 of-hidden size15 m-b-20">
@@ -421,6 +419,7 @@
 						</div>
 					</form>
 				</div>
+
 			</div>
 		</div>
 	</section>
@@ -440,11 +439,15 @@
 					</p>
 
 					<div class="flex-m p-t-30">
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>
-						<a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
+                        {% for social_link in social_links %}
+                        <li><a href={{ social_link.url }}><i class="fa {{ social_link.font_awesome_icon_tag }}"
+                                                                     aria-hidden="true"></i></a></li>
+                        {% endfor %}
+{#						<a href="#" class="fs-18 color1 p-r-20 fa fa-facebook"></a>#}
+{#						<a href="#" class="fs-18 color1 p-r-20 fa fa-instagram"></a>#}
+{#						<a href="#" class="fs-18 color1 p-r-20 fa fa-pinterest-p"></a>#}
+{#						<a href="#" class="fs-18 color1 p-r-20 fa fa-snapchat-ghost"></a>#}
+{#						<a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>#}
 					</div>
 				</div>
 			</div>
@@ -454,96 +457,17 @@
 					Categories
 				</h4>
 
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Men
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Women
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Dresses
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Sunglasses
-						</a>
-					</li>
-				</ul>
+				{% for c in category %}
+            <ul>
+                <li class="p-b-9">
+                    <a href="{% url 'category_product' c.slug %}" class="s-text7">
+                        {{ c.title }}
+                    </a>
+                </li>
+            </ul>
+            {% endfor %}
 			</div>
 
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Links
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Search
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							About Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Contact Us
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Help
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Track Order
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Returns
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Shipping
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							FAQs
-						</a>
-					</li>
-				</ul>
-			</div>
 
 			<div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
 				<h4 class="s-text12 p-b-30">
@@ -634,6 +558,19 @@
 	<script src="{% static 'js/map-custom.js' %}"></script>
 <!--===============================================================================================-->
 	<script src="{% static 'js/main.js' %}"></script>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 
 </body>
 </html>
