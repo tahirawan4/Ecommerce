@@ -89,5 +89,115 @@
     </div>
 </section>
 
+
+       <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+        </div>
+        <div class="modal-body">
+            <p>
+                <form id="contact-form" name="contact-form" action="{% url 'interested_products' %}" method="post">
+                    {% csrf_token %}
+
+                    <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <input type="email" id="email" name="from_email" class="form-control"
+                                       placeholder="Your email">
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+                        <div class="col-md-12">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <input type="text" id="subject" name="subject" class="form-control"
+                                       placeholder="Subject">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row"style="margin-bottom: 10px !important;">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <textarea type="text" id="message" name="message" rows="2"
+                                          class="form-control md-textarea" placeholder="Your message"></textarea>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                                        <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+                        <div class="col-md-12">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                    <div class="modal-body">
+                                        <input type="text" readonly name="product_name" id="product_name" value=""/>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                                                        <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+                        <div class="col-md-12">
+                            <div class="md-form" hidden style="border: 1px solid #c6bdbd;">
+                                    <div class="modal-body">
+                                        <input type="text"  name="bookId" id="bookId" value=""/>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                    <div class="center-on-small-only">
+{#                        <button class="btn btn-primary" type="submit">Send</button>#}
+                        <button class="btn btn-primary flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+								Send
+							</button>
+                    </div>
+
+                </form>
+
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+
 {% endblock content %}
 

@@ -79,9 +79,10 @@ class ProductDetailView(generic.TemplateView):
     def get(self, request, *args, **kwargs):
         slug = kwargs.get("slug")
         products = Product.objects.filter(slug=slug).first()
+        newarrivals = Product.objects.all()
         category = Category.objects.all()[:6]
         social_links = SocialLink.objects.all()
-        return render(request, self.template_name,{'social_links':social_links,'category':category,'products': products})
+        return render(request, self.template_name,{'newarrivals':newarrivals,'social_links':social_links,'category':category,'products': products})
 
 
 class ContactView(generic.TemplateView):

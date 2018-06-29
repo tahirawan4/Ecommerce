@@ -26,24 +26,194 @@
 
 			<div class="w-size14 p-t-30 respon5">
 				<h4 class="product-detail-name m-text16 p-b-13">
-					{{ products.title }}
+					Name : {{ products.title }}
 				</h4>
 
 				<span class="m-text17">
-					{{ products.price }}
+					Price : {{ products.price }}
 				</span>
 
-
-				<div class="wrap-dropdown-content bo7 p-t-15 p-b-14">
+                <br>
+                <button style="margin-bottom: 20px;
+margin-top: 20px;" type="button" class="open-AddBookDialog btn btn-info btn-lg" data-toggle="modal"
+                                            data-target="#myModal" data-name={{ products.title }} data-id={{ products.id }}>INTERESTED
+                </button>
+                <br>
+                <div class="wrap-dropdown-content bo6 p-t-15 p-b-14 active-dropdown-content">
+					<h5 class="js-toggle-dropdown-content flex-sb-m cs-pointer m-text19 color0-hov trans-0-4">
+						Description
+						<i class="down-mark fs-12 color1 fa fa-minus dis-none" aria-hidden="true"></i>
+						<i class="up-mark fs-12 color1 fa fa-plus" aria-hidden="true"></i>
+					</h5>
 
 					<div class="dropdown-content dis-none p-t-15 p-b-23">
 						<p class="s-text8">
-							Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat
+							{{ products.descrition }}
 						</p>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>
+
+    <section class="newproduct bgwhite p-t-45 p-b-105">
+    <div class="container">
+        <div class="sec-title p-b-60">
+            <h3 class="m-text5 t-center">
+                New Arrivals
+            </h3>
+        </div>
+
+        <!-- Slide2 -->
+        <div class="wrap-slick2">
+            <div class="slick2">
+                {% for p in newarrivals %}
+                    <div class="item-slick2 p-l-15 p-r-15">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+                                <img src="{{ p.image.url }}" alt="IMG-PRODUCT">
+
+                                <div class="block2-overlay trans-0-4">
+{#                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">#}
+{#                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>#}
+{#                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>#}
+{#                                    </a>#}
+                                    <div class="block2-btn-addcart w-size1 trans-0-4">
+                                        <!-- Button -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block2-txt p-t-20">
+                               <span style="float: left;"> <a href="{% url 'product_detail' p.slug %}" class="block2-name dis-block s-text3 p-b-5">
+                                    {{ p.title }}
+                                </a>
+                                   </span>
+
+                                <span style="float: right;" class="block2-price m-text6 p-r-5">
+									$ {{ p.price }}
+								</span>
+
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
+       <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+        </div>
+        <div class="modal-body">
+            <p>
+                                <form id="contact-form" name="contact-form" action="{% url 'interested_products' %}" method="post">
+                    {% csrf_token %}
+
+                    <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name">
+
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <input type="email" id="email" name="from_email" class="form-control"
+                                       placeholder="Your email">
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+                        <div class="col-md-12">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <input type="text" id="subject" name="subject" class="form-control"
+                                       placeholder="Subject">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                    <div class="row"style="margin-bottom: 10px !important;">
+
+                        <!--Grid column-->
+                        <div class="col-md-12">
+
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                <textarea type="text" id="message" name="message" rows="2"
+                                          class="form-control md-textarea" placeholder="Your message"></textarea>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                                        <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+                        <div class="col-md-12">
+                            <div class="md-form" style="border: 1px solid #c6bdbd;">
+                                    <div class="modal-body">
+                                        <input type="text" readonly name="product_name" id="product_name" value=""/>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                                                        <!--Grid row-->
+                    <div class="row" style="margin-bottom: 10px !important;">
+                        <div class="col-md-12">
+                            <div class="md-form" hidden style="border: 1px solid #c6bdbd;">
+                                    <div class="modal-body">
+                                        <input type="text"  name="bookId" id="bookId" value=""/>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                    <div class="center-on-small-only">
+{#                        <button class="btn btn-primary" type="submit">Send</button>#}
+                        <button class="btn btn-primary flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">
+								Send
+							</button>
+                    </div>
+
+                </form>
+            </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+
+
+</section>
 
 {% endblock content %}
