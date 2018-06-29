@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from ecommerce import views
 from ecommerce.views import IndexView, CategoryProductsView, ProductDetailView, ContactView, ModelView, ProductsView, \
-    InterestedProducts
+    InterestedProducts, AboutUs
 
 urlpatterns = [
 
@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^product_detail/(?P<slug>[\w-]+)/$', ProductDetailView.as_view(), name='product_detail'),
     url(r'^contact/$', ContactView.as_view(), name='contact'),
     url(r'^model/$', ModelView.as_view(), name='model'),
-    url(r'^interested/$', InterestedProducts.as_view(), name='interested_products')
-
+    url(r'^interested/$', InterestedProducts.as_view(), name='interested_products'),
+    url(r'^about/$', AboutUs.as_view(), name='about')
 
 ]

@@ -79,7 +79,9 @@ class ProductDetailView(generic.TemplateView):
     def get(self, request, *args, **kwargs):
         slug = kwargs.get("slug")
         products = Product.objects.filter(slug=slug).first()
-        return render(request, self.template_name,{'products': products})
+        category = Category.objects.all()[:6]
+        social_links = SocialLink.objects.all()
+        return render(request, self.template_name,{'social_links':social_links,'category':category,'products': products})
 
 
 class ContactView(generic.TemplateView):
@@ -117,3 +119,10 @@ class ContactView(generic.TemplateView):
 class ModelView(generic.TemplateView):
     template_name = 'model.html'
 
+class AboutUs(generic.TemplateView):
+    template_name = 'about.html'
+
+    def get(self, request, *args, **kwargs):
+        category = Category.objects.all()[:6]
+        social_links = SocialLink.objects.all()
+        return render(request, self.template_name,{'social_links':social_links,'category':category})
