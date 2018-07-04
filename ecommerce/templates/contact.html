@@ -15,6 +15,10 @@
 </section>
 {% endfor %}
 
+{% for message in messages %}
+        <div style="width: 21%;margin: auto;margin-top: auto;text-align: center;margin-top: 20px;" id="mydiv" style="margin: 10px; text-align: center" class="alert alert-{{ message.tags }}">{{ message }}</div>
+{% endfor %}
+
 	<!-- content page -->
 	<section class="bgwhite p-t-66 p-b-60">
 		<div class="container">
@@ -62,6 +66,13 @@
 		</div>
 	</section>
 
+
+<script>
+
+setTimeout(function() {
+        $("#mydiv").fadeOut().empty();
+    }, 4000);
+</script>
 {% endblock content %}
 
 

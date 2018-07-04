@@ -96,11 +96,11 @@
                             <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Shop</a>
                         </li>
 
-                          <li>
-
-                            {% url 'index' as url %}
-                            <a href="{{ url }}"{% if request.path == url %} class=""{% endif %}>Sale</a>
-                        </li>
+{#                          <li>#}
+{##}
+{#                            {% url 'index' as url %}#}
+{#                            <a href="{{ url }}"{% if request.path == url %} class=""{% endif %}>Sale</a>#}
+{#                        </li>#}
 
                         <li>
                             {% url 'about' as url %}
@@ -109,12 +109,15 @@
 
                         <li>
                             {% url 'contact' as url %}
-                            <a href="{{ url }}"{% if request.path == url %} class="active">{% endif %}>Contact</a>
+                            <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %}>Contact</a>
                         </li>
                     </ul>
                   </div>
                 </nav>
             </div>
+
+
+
 
             <!-- Header Icon -->
             <div class="header-icons">

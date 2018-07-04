@@ -1,4 +1,6 @@
 from __future__ import unicode_literals
+
+from django.contrib import messages
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.views import generic
@@ -7,6 +9,7 @@ from eCommerce import settings
 
 from django.shortcuts import render, redirect
 
+from ecommerce import forms
 from ecommerce.forms import ContactForm, ContactForm_2
 from ecommerce.models import Slider, Product, SocailMedia, Category, TitleBar, SocialLink
 from django.core.mail import BadHeaderError, send_mail
@@ -59,10 +62,23 @@ class InterestedProducts(generic.TemplateView):
                               fail_silently=False, )
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
-                return redirect('index')
+                messages.success(request, 'Sent Successfully')
+
+                return redirect('product')
         return render(request, "product.html", {'form': form})
 
 class ProductsView(generic.TemplateView):
+
+    # def node_config(request):
+    #     form = forms.ContactForm
+    #     if request.method == 'POST':
+    #         form = forms.ContactForm(request.POST)
+    #         if form.is_valid():
+    #             # form.save()
+    #             messages.success(request, "Configuration successfully submitted")
+    #             # return HttpResponseRedirect(reverse('nodes:config'))
+    #     return render(request, 'product.html', {'form': form})
+
     template_name = 'product.html'
 
     def get(self, request, *args, **kwargs):
@@ -111,6 +127,7 @@ class ContactView(generic.TemplateView):
                               fail_silently=False, )
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
+                messages.success(request, 'Sent Successfully')
                 return redirect('contact')
 
         return render(request, "contact.html", form)
