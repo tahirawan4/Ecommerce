@@ -70,12 +70,12 @@
                                 </div>
 
                                 <div class="block2-txt p-t-20">
-                                    <span style="float: left;"><a href="{% url 'product_detail' p.slug %}" class="block2-name dis-block s-text3 p-b-5">
-                                        {{ p.title }}
+                                    <span style="float: left;width: 70%;"><a href="{% url 'product_detail' p.slug %}" class="block2-name dis-block s-text3 p-b-5">
+                                       NAME: {{ p.title }}
                                     </a></span>
 
-                                    <span style="float: right;"  class="block2-price m-text6 p-r-5">
-										{{ p.price }}
+                                    <span style="float: right;width: 30%;"  class="block2-price m-text6 p-r-5">
+										PRICE: {{ p.price }}
 									</span>
                                     <br>
                                     <button type="button" class="open-AddBookDialog btn btn-info btn-lg" data-toggle="modal"
