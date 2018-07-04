@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.template.defaultfilters import slugify
+# from django.db import models
 
 from .utils import get_unique_slug
 

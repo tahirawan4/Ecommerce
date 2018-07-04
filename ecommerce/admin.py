@@ -1,8 +1,9 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+# from django.db import models
 
-from models import Slider, Image ,Category,Product, ContactUs, Order, SocailMedia, TitleBar,SocialLink
+from ecommerce.models import Slider, Image ,Category,Product, ContactUs, Order, SocailMedia, TitleBar,SocialLink
 
 class SocialLinkAdmin(admin.ModelAdmin):
     model = SocialLink
