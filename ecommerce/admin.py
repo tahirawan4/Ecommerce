@@ -1,9 +1,16 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
+# from django.db import models
 
-from models import Slider, Image ,Category,Product, ContactUs, Order, SocailMedia
+from ecommerce.models import Slider, Image ,Category,Product, ContactUs, Order, SocailMedia, TitleBar,SocialLink
 
+class SocialLinkAdmin(admin.ModelAdmin):
+    model = SocialLink
+
+class TitleBarAdmin(admin.ModelAdmin):
+    model = TitleBar
+    list_display = ('shop_title_bar_title','shop_title_bar')
 
 class ProductAdmin(admin.ModelAdmin):
     model = Product
@@ -44,6 +51,8 @@ admin.site.register(Slider, SliderAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(ContactUs, ContactUsAdmin)
 admin.site.register(Order, OrderAdmin)
+admin.site.register(TitleBar,TitleBarAdmin)
+admin.site.register(SocialLink,SocialLinkAdmin)
 
 
 
