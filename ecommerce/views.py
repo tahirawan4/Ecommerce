@@ -33,11 +33,12 @@ class CategoryProductsView(generic.TemplateView):
     template_name = 'categoryProducts.html'
 
     def get(self, request, *args, **kwargs):
+        all_products = Product.objects.all()
         slug = kwargs.get("slug")
         products = Product.objects.filter(category__slug=slug)
         category = Category.objects.all()[:6]
         social_links = SocialLink.objects.all()
-        return render(request, self.template_name, {'social_links':social_links,'category':category,'products': products})
+        return render(request, self.template_name, {'all_products':all_products,'social_links':social_links,'category':category,'products': products})
 
 
 class InterestedProducts(generic.TemplateView):
